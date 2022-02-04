@@ -1,6 +1,5 @@
-# README
-
-**Airplane Seating Algorithm**
+# Airplane Seating Algorithm
+## Output: https://airplane-seating-algo.herokuapp.com
 
 Write a program that helps seat audiences in a flight based on the following input and rules.
 
