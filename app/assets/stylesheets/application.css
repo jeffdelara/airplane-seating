@@ -77,3 +77,24 @@ label {
 .red {
   color: red;
 }
+
+.aisle {
+  background-color: lightblue;
+}
+
+.window {
+  background-color: lightgreen;
+}
+
+.middle {
+  background-color: lightpink;
+}
+
+.legend {
+  display: flex;
+}
+
+.legend div {
+  margin: 0 1rem;
+  padding: .5rem;
+}

@@ -148,6 +148,13 @@ class AirplaneSeating < ApplicationRecord
     (@aisles + @windows + @middle).length
   end
 
+  def type_of_seat(coor)
+    return "aisle" if @aisles.include?(coor)
+    return "window" if @windows.include?(coor)
+    return "middle" if @middle.include?(coor)
+    false
+  end
+
   private 
 
   def is_2d?(arr)

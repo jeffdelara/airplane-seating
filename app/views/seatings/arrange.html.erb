@@ -6,14 +6,20 @@
       <li>Fill aisle seats first followed by window seats followed by center seats (any order in center seats)</li>
     </ol>
 
+  <div class="legend">
+    <div class="aisle">&#9632; - Aisle</div>
+    <div class="window">&#9632; - Window</div>
+    <div class="middle">&#9632; - Middle</div>
+  </div>
+  
   <div class="groups">
-  <% @seating_arrangement.each do |group| %>
+  <% @seating_arrangement.each_with_index do |group, g_index| %>
     <div class="group-item">
       <table>
-      <% group.each do |rows| %>
+      <% group.each_with_index do |rows, r_index| %>
         <tr>
-          <% rows.each do |col| %>
-            <td><%= col %></td>
+          <% rows.each_with_index do |col, c_index| %>
+            <td class="<%= @airplane.type_of_seat([g_index, r_index, c_index]) %>"><%= col %></td>
           <% end %>
         </tr>
       <% end %>
