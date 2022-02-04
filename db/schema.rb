@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_02_04_023906) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "airplane_seatings", force: :cascade do |t|
     t.string "seat"
     t.datetime "created_at", precision: 6, null: false
