@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Seating Arrangement</h1>
+  <h3>**Rules for seating**</h3>
+    <ol>
+      <li>Always seat passengers starting from the front row to back, starting from the left to the right</li>
+      <li>Fill aisle seats first followed by window seats followed by center seats (any order in center seats)</li>
+    </ol>
+
+  <div class="groups">
+  <% @seating_arrangement.each do |group| %>
+    <div class="group-item">
+      <table>
+      <% group.each do |rows| %>
+        <tr>
+          <% rows.each do |col| %>
+            <td><%= col %></td>
+          <% end %>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+  <% end %>
+  </div>
+  <% if @not_seated > 0 %>
+    <div class="red">There are <%= @not_seated %> passengers not seated.</div>
+  <% end %>
+  <p><%= link_to "Another seating arrangement", root_path %></p>
+</div>

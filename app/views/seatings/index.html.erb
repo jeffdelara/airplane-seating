@@ -1,0 +1,19 @@
+<div class="container">
+<h1>Airplane Seating Algorithm</h1>
+<p>Enter a 2D array.</p>
+<p>Example: [[3,2], [4,3], [2,3], [3,4]]</p>
+  <div>
+  <%= form_with url: seatings_path, method: :get do |f| %>
+    <div>
+      <%= f.label :array2d %>:<br>
+      <%= f.text_field :array2d, value: "[[3,2], [4,3], [2,3], [3,4]]" %>
+    </div>
+
+    <div>
+      <%= f.label :passengers, "How many passengers?" %><br>
+      <%= f.number_field :passengers, required: true, min: 1, value: 30 %>
+    </div>
+    <%= f.submit "Arrange Seat" %>
+  <% end %>
+  </div>
+</div>
